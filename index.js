@@ -5,14 +5,17 @@ const app = express();
 
 app.use(express.json());
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: "35.164.243.54",
     user: "admin",
     password: "Greggs704#",
-    database: "pa_3"
+    database: "pa_3",
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-db.connect((err) => {
+db.query("SELECT 1", (err) => {
     if (err) {
         console.error("MySQL connection failed:", err);
         return;
