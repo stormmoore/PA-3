@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 const db = mysql.createPool({
-    host: "35.164.243.54",
+    host: "arduino-sensor-data.cdki4ei6mh95.us-west-2.rds.amazonaws.com",
     user: "admin",
     password: "Greggs704#",
     database: "pa_3",
