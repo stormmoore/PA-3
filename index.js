@@ -35,7 +35,7 @@ app.post("/api/sensor", (req, res) => {
     } = req.body;
 
     const sql = `
-        INSERT INTO sensor_data
+        INSERT INTO sensor_readings
         (temperature_f, temperature_c, humidity)
         VALUES (?, ?, ?)
     `;
